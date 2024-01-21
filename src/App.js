@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import CreateEmployer from './pages/employer/CreateEmployer';
+import CreateWorker from './pages/worker/CreateWorker'
+import GetEmployer from "./pages/employer/GetEmployer"
+import GetWorker from "./pages/worker/GetWorker"
+import Navbar from './components/Navbar/navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+    <>
+    {/* <Navbar/> */}
+    {/* <CreateEmployer/> */}
+    {/* <CreateWorker/> */}
+    {/* <GetEmployer/> */}
+    <GetWorker/>
+    </>
+  )
 }
 
 export default App;
