@@ -1,6 +1,8 @@
 import React, {useState } from 'react';
 import axios from 'axios';
 import "./employer.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function CreateEmployer() {
 
@@ -15,8 +17,10 @@ function CreateEmployer() {
 
       try {
         const response = await axios.post(`http://localhost:8000/user/employer/create`, formData);
+        toast.success("Employer created successfully.")
         console.log('Response from server:', response.data);
       } catch (error) {
+        toast.error("Please register the employer first.")
         console.error('Error making GET request:', error);
       }
   };
@@ -46,6 +50,7 @@ function CreateEmployer() {
 
         <button type="submit">Submit</button>
     </form>
+    <ToastContainer/>
     </>
   )
 }

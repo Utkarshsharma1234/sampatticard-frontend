@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function GetWorker() {
 
@@ -14,9 +16,10 @@ function GetWorker() {
   
         try {
           const response = await axios.get(`http://localhost:8000/user/domestic_worker/${workerNumber}`);
+          toast.success("The worker with the given phone number exists.");
           console.log('Response from server:', response.data);
         } catch (error) {
-          console.error('Error making GET request:', error);
+          toast.error("Worker not found. Please register the worker first.")
         }
     };
 
@@ -30,6 +33,7 @@ function GetWorker() {
 
             <button type="submit">Submit</button>
     </form>
+    <ToastContainer/>
     </>
   )
 }

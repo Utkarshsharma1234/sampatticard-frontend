@@ -1,6 +1,8 @@
 import {useState, React} from 'react'
 import "./worker.css"
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function CreateWorker() {
 
@@ -16,8 +18,10 @@ function CreateWorker() {
     
           try {
             const response = await axios.post(`http://localhost:8000/user/domestic_worker/create`, formData);
+            toast.success("Worker onboarded successfully.")
             console.log('Response from server:', response.data);
           } catch (error) {
+            toast.error("Employer with the given phone number doesn't exist.")
             console.error('Error making GET request:', error);
           }
       };
@@ -51,6 +55,7 @@ function CreateWorker() {
 
         <button type="submit">Submit</button>
     </form>
+    <ToastContainer/>
     </>
   )
 }
