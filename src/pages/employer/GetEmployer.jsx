@@ -11,7 +11,7 @@ function GetEmployer() {
           e.preventDefault();
     
           try {
-            const response = await axios.get(`http://localhost:8000/user/employer/${employerNumber}`);
+            const response = await axios.get(`https://conv.sampatticards.com/user/employer/${employerNumber}`);
             toast.success("The employer with the given number exists")
             console.log('Response from server:', response.data);
           } catch (error) {

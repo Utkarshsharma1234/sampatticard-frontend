@@ -16,7 +16,7 @@ function CreateEmployer() {
       e.preventDefault();
 
       try {
-        const response = await axios.post(`http://localhost:8000/user/employer/create`, formData);
+        const response = await axios.post(`https://conv.sampatticards.com/user/employer/create`, formData);
         toast.success("Employer created successfully.")
         console.log('Response from server:', response.data);
       } catch (error) {
