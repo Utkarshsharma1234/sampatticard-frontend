@@ -26,6 +26,11 @@ function Navbar() {
           Create Worker
         </Link>
       </div>
+      <div className={`navbar-item`}>
+        <Link to="/get_salary_slip" className='nav-link'>
+          Get Salary Slip
+        </Link>
+      </div>
     </div>
   );
 }

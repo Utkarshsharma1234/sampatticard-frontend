@@ -4,6 +4,7 @@ import CreateEmployer from './pages/employer/CreateEmployer';
 import CreateWorker from './pages/worker/CreateWorker';
 import GetEmployer from "./pages/employer/GetEmployer";
 import GetWorker from "./pages/worker/GetWorker";
+import GetSalarySlip from "./pages/salary_slip_gen/Salary_slip";
 import Navbar from './components/Navbar/navbar';
 import './App.css'; 
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/create_worker" element={<CreateWorker />} />
             <Route path="/get_employer" element={<GetEmployer />} />
             <Route path="/get_worker" element={<GetWorker />} />
+            <Route path="/get_salary_slip" element={<GetSalarySlip />} />
           </Routes>
         </div>
       </div>
